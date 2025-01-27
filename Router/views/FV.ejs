@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Management Joins</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px 0;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Flight Management System</h2>
+
+    <!-- Flights and Airports Join -->
+    <h3>Flights and Departure Airport Details</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Flight ID</th>
+                <th>Departure Airport ID</th>
+                <th>Arrival Airport ID</th>
+                
+                <th>Deperature Time</th>
+                <th>Arrival Time</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% flights.forEach(flight => { %>
+                <tr>
+                    <td><%= flight.flight_number %></td>
+                    <td><%= flight.departure_airport %></td>
+                    <td><%= flight.arrival_airport %></td>
+                    <td><%= flight. departure_time%></td>
+                    <td><%= flight. arrival_time%></td>
+                    <td><%= flight. details%></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+                   
+</body>
+</html>

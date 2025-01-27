@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff and Flights</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .btn {
+      padding: 5px 10px;
+      margin: 2px;
+      text-align: center;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-update {
+      background-color: #ffc107;
+    }
+    .btn-delete {
+      background-color: #dc3545;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Staff Details with Flight IDs</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Staff ID</th>
+          <th>Staff Name</th>
+          <th>Role</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Flight ID</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (staffs && staffs.length > 0) { %>
+          <% staffs.forEach(function(staff) { %>
+            <tr>
+              <td><%= staff._id %></td>
+              <td><%= staff.data.staffName %></td>
+              <td><%= staff.data.staffRole %></td>
+              <td><%= staff.data.staffEmail %></td>
+              <td><%= staff.data.staffPhone %></td>
+              <td><%= staff.data.flightID%></td>
+              <td>
+                <a href="/staff/update/<%= staff.Staff_ID %>" class="btn btn-update">Update</a>
+                <a href="/staff/delete/<%= staff.Staff_ID %>" class="btn btn-update">Delete</a>
+                
+              </td>
+            </tr>
+          <% }); %>
+        <% } else { %>
+          <tr>
+            <td colspan="7" style="text-align: center;">No staff records found</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Data</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Link to external CSS for styling -->
+</head>
+<body>
+  <h1>Stored Data</h1>
+  <button onclick="location.href='/'">Go to Login</button>
+
+  <div class="data-container">
+    <% documents.forEach(item => { %>
+      <div class="data-card">
+        <h3>Name: <%= item.username %></h3>
+        <p>Password: <%= item.password%></p>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

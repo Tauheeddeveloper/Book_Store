@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Registration Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f4f8;">
+  <div style="background: #fff; padding: 20px 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px;">
+    <h1 style="text-align: center; color: #333; font-size: 24px; margin-bottom: 20px;">Staff Registration</h1>
+    <form id="staffForm"  action="/S_submit" method="POST">
+     
+
+      <label for="staffName" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Staff Name</label>
+      <input type="text" id="staffName" name="staffName" placeholder="Enter Staff Name" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="staffRole" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Role</label>
+      <input type="text" id="staffRole" name="staffRole" placeholder="Enter Staff Role" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="staffEmail" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Email</label>
+      <input type="email" id="staffEmail" name="staffEmail" placeholder="Enter Staff Email" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="staffPhone" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Phone Number</label>
+      <input type="tel" id="staffPhone" name="staffPhone" placeholder="Enter Phone Number" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="flightID" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Flight ID</label>
+      <input type="number" id="flightID" name="flightID" placeholder="Enter Flight ID"
+        style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+        Register
+      </button>
+    </form>
+  </div>
+</body>
+</html>

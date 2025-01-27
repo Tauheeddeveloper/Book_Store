@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Ticket</title>
+</head>
+<body>
+    <h1>Edit Ticket</h1>
+    <form action="/tickets/edit/<%= ticket._id %>" method="POST">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" value="<%= ticket.data.passengerID %>" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<%= ticket.data.email %>" required><br>
+
+        <label for="flight">Flight Number:</label>
+        <input type="text" id="flight" name="flight" value="<%= ticket.data.flight %>" required><br>
+
+        <input type="submit" value="Update Ticket">
+    </form>
+</body>
+</html>

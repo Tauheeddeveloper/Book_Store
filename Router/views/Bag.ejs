@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baggage Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f6f9;">
+  <div style="background: #fff; padding: 20px 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px;">
+    <h1 style="text-align: center; font-size: 24px; margin-bottom: 20px; color: #333;">Baggage Form</h1>
+    <form id="baggageForm">
+      <label for="baggageID" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Baggage ID</label>
+      <input type="number" id="baggageID" name="baggageID" placeholder="Auto-generated" readonly
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; background-color: #f9f9f9;">
+
+      <label for="ticketID" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Ticket ID</label>
+      <input type="number" id="ticketID" name="ticketID" placeholder="Enter Ticket ID" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="baggageWeight" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Baggage Weight (kg)</label>
+      <input type="number" id="baggageWeight" name="baggageWeight" placeholder="Enter Weight" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="baggageType" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Baggage Type</label>
+      <select id="baggageType" name="baggageType" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+        <option value="">Select Type</option>
+        <option value="Carry-on">Carry-on</option>
+        <option value="Checked">Checked</option>
+        <option value="Oversized">Oversized</option>
+      </select>
+
+      <label for="extraFee" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Extra Baggage Fee</label>
+      <input type="number" id="extraFee" name="extraFee" placeholder="Enter Fee (if any)" required
+        style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <button type="submit" style="width: 100%; padding: 12px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+        Submit Baggage Details
+      </button>
+    </form>
+  </div>
+</body>
+</html>

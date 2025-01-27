@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tickets List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Passenger ID</th>
+                <th>Flight ID</th>
+                <th>Booking Date</th>
+                <th>Seat Class</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tickets.forEach(ticket => { %>
+                <tr>
+                    <td><%= ticket.data.passengerID %></td>
+                    <td><%= ticket.data.flightID %></td>
+                    <td><%= ticket.data.bookingDate %></td>
+                    <td><%= ticket.data.seatClass %></td>
+                    <td><%= ticket.data.price %></td>
+                    <td><%= ticket.data.status %></td>
+                    <td>
+                        <!-- Delete Button -->
+                        <form action="/tickets/delete/<%= ticket._id %>" method="POST" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+
+                        <!-- Update Button -->
+                        <a href="/tickets/edit/<%= ticket._id %>">
+                            <button type="button">Update</button>
+                        </a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

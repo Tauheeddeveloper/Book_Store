@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Management Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: rgba(242, 227, 227, 0.804);
+        }
+        h2{
+          text-align: center;
+          color: rgb(197, 207, 197);
+          
+          border-radius: 1rem;
+        
+        }
+        .form{
+          height: 600px;
+          width: 600px;
+          background-color: rgb(10, 11, 10);
+          padding: 1rem;
+          border-radius: 1rem;
+          box-shadow: 0px 0px 10px 15px rgb(31, 83, 215);
+          margin: 0 auto;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          justify-content: space-between;
+          flex-direction: column;
+        }
+
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: rgb(225, 218, 218);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #171ac5;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 1rem;
+            
+        }
+        
+
+        button:hover {
+            background-color: #ee1237;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="form">
+    <h2>Flight Details Form</h2>
+    <form action="/submit-flight" method="POST">
+
+        <label for="flight_number">Flight Number:</label>
+        <input type="text" id="flight_number" name="flight_number" placeholder="Enter flight number" required>
+
+        <label for="departure_airport">Departure Airport ID:</label>
+        <input type="number" id="departure_airport" name="departure_airport" placeholder="Enter departure airport ID" required>
+
+        <label for="arrival_airport">Arrival Airport ID:</label>
+        <input type="number" id="arrival_airport" name="arrival_airport" placeholder="Enter arrival airport ID" required>
+
+        <label for="departure_time">Departure Time:</label>
+        <input type="datetime-local" id="departure_time" name="departure_time" required>
+
+        <label for="arrival_time">Arrival Time:</label>
+        <input type="datetime-local" id="arrival_time" name="arrival_time" required>
+
+        <label for="details">Details:</label>
+        <input type="text" id="details" name="details" placeholder="Enter flight details" required>
+
+        <button type="submit">Submit</button>
+    </form>
+   </div>
+
+</body>
+</html>

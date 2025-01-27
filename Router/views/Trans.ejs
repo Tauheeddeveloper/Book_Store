@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #eef2f3;">
+  <div style="background: #fff; padding: 20px 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px;">
+    <h1 style="text-align: center; font-size: 24px; margin-bottom: 20px; color: #333;">Transaction Form</h1>
+    <form id="transactionForm">
+      <label for="transactionID" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Transaction ID</label>
+      <input type="number" id="transactionID" name="transactionID" placeholder="Auto-generated" readonly
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; background-color: #f9f9f9;">
+
+      <label for="ticketID" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Ticket ID</label>
+      <input type="number" id="ticketID" name="ticketID" placeholder="Enter Ticket ID" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="amount" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Amount</label>
+      <input type="number" id="amount" name="amount" placeholder="Enter Amount" step="0.01" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="paymentDate" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Payment Date</label>
+      <input type="datetime-local" id="paymentDate" name="paymentDate" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <label for="paymentMethod" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Payment Method</label>
+      <select id="paymentMethod" name="paymentMethod" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+        <option value="">Select Method</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Cash">Cash</option>
+      </select>
+
+      <label for="details" style="display: block; font-size: 14px; margin-bottom: 5px; color: #555;">Details</label>
+      <input type="text" id="details" name="details" placeholder="Enter Payment Details" required
+        style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+
+      <button type="submit" style="width: 100%; padding: 12px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+        Submit Transaction
+      </button>
+    </form>
+  </div>
+</body>
+</html>

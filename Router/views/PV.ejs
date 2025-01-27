@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e1e2e2, #a29bfe);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #2d3436;
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 2px;
+            animation: fadeInDown 0.8s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .table-container {
+            width: 90%;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #0984e3;
+            color: #932020;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: black;
+        }
+
+        th {
+            text-transform: uppercase;
+        }
+
+        tbody tr {
+            background-color: #1673cf;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #dfe6e9;
+            transform: scale(1.02);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-update {
+            background: linear-gradient(135deg, #00cec9, #01a3a1);
+            color: #fff;
+        }
+
+        .btn-update:hover {
+            background: linear-gradient(135deg, #01b1ad, #028e89);
+        }
+
+        .btn-delete {
+            background: linear-gradient(135deg, #d63031, #b22a27);
+            color: #fff;
+        }
+
+        .btn-delete:hover {
+            background: linear-gradient(135deg, #c12b2b, #9c2424);
+        }
+
+        .btn-delete:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+    <h2>Passenger Details</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(passenger) { %>
+                    <h1><%=passenger.Name%></h1>
+                    <tr>
+                        <td><%= passenger.name %></td>
+                        <td><%= passenger.date_of_birth %></td>
+                        <td><%= passenger.gender %></td>
+                        <td><%= passenger.email %></td>
+                        <td><%= passenger.phone_number %></td>
+                        <td class="action-buttons">
+                            <a href="/passenger/update/<%= passenger.Name %>" class="btn btn-update">Update</a>
+                            <a href="/passenger/delete/<%= passenger.Name %>" class="btn btn-update">Delete</a>
+                            
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airport Details</title>
+  <style>
+    body{
+      background-color: white;
+    }
+    .form{
+      height: 700px;
+      width: 500px;
+      padding: 1rem;
+      border-radius: 1rem;
+      background-color: rgb(19, 51, 212);
+      display: flex;
+    justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-inline: auto;
+    }
+    label{
+    
+      
+      color: white;
+      display: block;
+      margin-bottom: .5rem;
+      font-size: 1rem;
+    }
+    input{
+      padding: 1rem;
+      border: none;
+      background-color: rgb(50, 48, 48);
+      color: white;
+      border-radius: 1rem;
+      margin-bottom: 3rem;
+    }
+    button{
+      padding: 1rem;
+      background-color: rgb(227, 17, 24);
+      color: white;
+      border: none;
+      margin-left: 2rem;
+    
+    }
+    button:hover{
+      border-radius: .5rem;
+      
+    }
+    h1{
+      color: azure;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="form">
+    <h1>Enter The Airport Details</h1>
+    <form action="/a_sbmit" method="POST">
+      <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Enter Name.." required>
+    <label for="location">Location</label>
+    <input type="text" name="location" placeholder="Enter Location.." required>
+    <label for="country">Country</label>
+    <input type="text" name="country" placeholder="Enter Country.." required>
+    <label for="code">Code</label>
+    <input type="text"   name="code"placeholder="Enter Code.."  required>
+    <div class="b">
+      <button type="submit">Submitt</button>
+    </div>
+ 
+    </form>
+  </div>
+  
+</body>
+</html>

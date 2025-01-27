@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Booking Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <style>
+    /* styles.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.form-container {
+  background: #fff;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #4e54c8;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  border-color: #4e54c8;
+  outline: none;
+  box-shadow: 0 0 5px rgba(78, 84, 200, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #4e54c8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #8f94fb;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+  </style>
+  <div class="form-container">
+    <h1>Book a Ticket</h1>
+    <form action="/T_submit" method="POST" id="ticketForm">
+      <label for="passengerID">Passenger ID</label>
+      <input type="number" id="passengerID" name="passengerID" placeholder="Enter Passenger ID" required>
+
+      <label for="flightID">Flight ID</label>
+      <input type="number" id="flightID" name="flightID" placeholder="Enter Flight ID" required>
+
+      <label for="bookingDate">Booking Date</label>
+      <input type="datetime-local" id="bookingDate" name="bookingDate" required>
+
+      <label for="seatClass">Seat Class</label>
+      <select id="seatClass" name="seatClass" required>
+        <option value="">Select Seat Class</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="First Class">First Class</option>
+      </select>
+
+      <label for="price">Price</label>
+      <input type="number" id="price" name="price" placeholder="Enter Price" step="0.01" required>
+
+      <label for="status">Status</label>
+      <select id="status" name="status" required>
+        <option value="">Select Status</option>
+        <option value="Confirmed">Confirmed</option>
+        <option value="Pending">Pending</option>
+        <option value="Cancelled">Cancelled</option>
+      </select>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
